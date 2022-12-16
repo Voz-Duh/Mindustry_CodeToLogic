@@ -1,8 +1,22 @@
 
+<details><summary>Constants</summary>
+<p>
+
+<details><summary>#mind_code_lines</summary>
+<p>
+
+Current number of mindustry processors code lines.
+
+</p>
+</details>
+
+</p>
+</details>
+
 <details><summary>Operators</summary>
 <p>
 
-<details><  summary><-</summary>
+<details><summary>  <-</summary>
 <p>
 
 ####    Move line to end of last line.
@@ -139,7 +153,7 @@
 <details><summary>for</summary>
 <p>
 
-####    Basic java for.
+####    Basic Java/C#/C++ for.
     
 <details><summary>Example</summary>
 <p>
