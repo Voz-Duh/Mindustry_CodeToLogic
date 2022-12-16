@@ -1,0 +1,28 @@
+
+set_team_rule(@sharded, $blockDamage, 9)
+
+var count = fetch_build_count(@green, @mender)
+
+for (var i = 0; i < count; i++) {
+    var block = fetch_build(@green, @mender, i)
+    var rx = @x << block
+    var ry = @y << block
+
+    if (get_block(rx, ry) != @air) {
+        #macro replace: set_block(@green, @mender, rx + 1, ry, 0)
+        if (get_block(rx + 1, ry) == @air) {-> replace-> }
+
+        #macro replace: set_block(@green, @mender, rx - 1, ry, 0)
+        if (get_block(rx - 1, ry) == @air) {-> replace-> }
+
+        #macro replace: set_block(@green, @mender, rx, ry + 1, 0)
+        if (get_block(rx, ry + 1) == @air) {-> replace-> }
+
+        #macro replace: set_block(@green, @mender, rx, ry - 1, 0)
+        if (get_block(rx, ry - 1) == @air) {-> replace-> }
+
+        explosion(@green, rx, ry, 2.5, 65, true, true, false)
+    }
+}
+
+set_rate fetch_build_count(@green, @mender) * #mind_code_lines
